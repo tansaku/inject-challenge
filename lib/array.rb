@@ -1,5 +1,9 @@
 class Array
   def inject_clone
-    6
+    memo = self[0]
+    drop(1).each do |e|
+      memo = yield memo, e
+    end
+    memo
   end
 end
