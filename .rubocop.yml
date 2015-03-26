@@ -6,14 +6,37 @@ EmptyLinesAroundBlockBody:
 Style/StringLiterals:
   Enabled: false
 
-Documentation:
+Style/Documentation:
+  Description: Document classes and non-namespace modules.
   Enabled: false
 
 Style/MethodDefParentheses:
   Description: Checks if the method definitions have or don't have parentheses.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#method-parens
-  Enabled: true
-  EnforcedStyle: require_no_parentheses
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Description: Enforces the names of some block params.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#reduce-blocks
+  Enabled: false
+  Methods:
+  - reduce:
+    - a
+    - e
+  - inject:
+    - a
+    - e
+
+Lint/UselessAssignment:
+  Description: Checks for useless assignment to a local variable.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars
+  Enabled: false
+
+Style/TrailingBlankLines:
+  Description: Checks trailing blank lines and final newline.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#newline-eof
+  Enabled: false
+  EnforcedStyle: final_newline
   SupportedStyles:
-  - require_parentheses
-  - require_no_parentheses
+  - final_newline
+  - final_blank_line
