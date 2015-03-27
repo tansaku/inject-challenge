@@ -1,5 +1,5 @@
 require 'simplecov'
-
+require 'byebug'
 require 'coveralls'
 Coveralls.wear!
 

@@ -12,7 +12,9 @@ describe Array do
     result = subject.inject_clone { |memo, element| memo - element }
     expect(result).to eq original
   end
-  # it 'sums numbers with a base' do
-  #   expect(subject.inject_clone(&operation)).to eq subject.inject(&operation)
-  # end
+  it 'sums numbers with a base' do
+    original = subject.inject(10) { |memo, element| memo + element }
+    result = subject.inject_clone(10) { |memo, element| memo + element }
+    expect(result).to eq original
+  end
 end

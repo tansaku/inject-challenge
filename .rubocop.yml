@@ -40,3 +40,15 @@ Style/TrailingBlankLines:
   SupportedStyles:
   - final_newline
   - final_blank_line
+
+
+Style/RedundantSelf:
+  Description: Don't use self where it's not needed.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-self-unless-required
+  Enabled: false
+
+Style/Semicolon:
+  Description: Don't use semicolons to terminate expressions.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-semicolon
+  Enabled: false
+  AllowAsExpressionSeparator: false

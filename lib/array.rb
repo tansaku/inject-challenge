@@ -1,9 +1,7 @@
 class Array
-  def inject_clone
-    memo = self[0]
-    drop(1).each do |e|
-      memo = yield memo, e
-    end
+  def inject_clone memo = (default = true; self[0])
+    clone = default ? self.drop(1) : self
+    clone.each { |e| memo = yield memo, e }
     memo
   end
 end
