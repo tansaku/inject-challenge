@@ -17,4 +17,14 @@ describe Array do
     result = subject.inject_clone(10) { |memo, element| memo + element }
     expect(result).to eq original
   end
+  it 'sums with a symbol' do
+    original = subject.inject :+
+    result = subject.inject_clone :+
+    expect(result).to eq original
+  end
+  it 'sums with a symbol and a base' do
+    original = subject.inject 10, :+
+    result = subject.inject_clone 10, :+
+    expect(result).to eq original
+  end
 end
