@@ -69,3 +69,4 @@ DEPENDENCIES
   rspec
   rubocop
   rubocop-rspec
+  simplecov
