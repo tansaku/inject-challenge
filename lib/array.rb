@@ -2,8 +2,7 @@ require_relative 'injector_factory'
 
 class Array
   def inject_clone *args, &block
-    injector = InjectorFactory.create(self, args, block)
-    injector.memo
+    InjectorFactory.create(self, args, block).memo
   end
 
   def index_of_symbol
