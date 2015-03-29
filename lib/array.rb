@@ -2,12 +2,8 @@ class Array
   def inject_clone *args
     memo = no_args_or_symbol?(args) ? self[0] : args[0]
     clone = no_args_or_symbol?(args) ? self.drop(1) : self
-
-    if args.index_of_symbol
-      clone.each { |e| memo = memo.send(args[args.index_of_symbol], e) }
-    else
-      clone.each { |e| memo = yield memo, e }
-    end
+    i = args.index_of_symbol
+    clone.each { |e| memo = (i ? (memo.send(args[i], e)) : (yield memo, e)) }
     memo
   end
 
